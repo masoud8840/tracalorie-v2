@@ -15,6 +15,6 @@ const useAuthentication = require("./routes/Authentication");
 app.use(`${process.env.base_URL}/auth`, useAuthentication);
 
 const useWorkouts = require("./routes/Workout");
-app.use(`${process.env.base_URL}/users/workouts`,useWorkouts);
+app.use(`${process.env.base_URL}/users/workouts`, useWorkouts);
 
 app.listen(3000);
