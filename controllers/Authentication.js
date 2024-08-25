@@ -18,7 +18,12 @@ module.exports.postSignup = Async(async (req, res, next) => {
   }
 
   const password = await bcrypt.hash(pw, 12);
-  const newUser = new User({ username, password });
+  const newUser = new User({
+    username,
+    password,
+    calories: {},
+    workouts: [],
+  });
   await newUser.save();
 
   res.status(200).json({
